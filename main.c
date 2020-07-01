@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
             printf("%d ", vet_aux[i]);
         }
         printf("\n\nSorted: ");
-        for(i=0; i<size; i++){
+        for(i=0; i<=size; i++){
             printf("%d ", vet[i]);
         }
     }

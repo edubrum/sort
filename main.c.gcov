@@ -89,7 +89,7 @@ call    0 never executed
         -:   54:        }
     #####:   55:        printf("\n\nSorted: ");
 call    0 never executed
-    #####:   56:        for(i=0; i<size; i++){
+    #####:   56:        for(i=0; i<=size; i++){
 branch  0 never executed
 branch  1 never executed
     #####:   57:            printf("%d ", vet[i]);

@@ -13,4 +13,5 @@ echo "Teste 5: Entrada: a = heap n = 0 s = almost   Espera-se: INVALID N "
 ./app -a heap -n 0 -s almost -P
 echo "Teste 6: Entrada: a = insertion n = 9 s = none   Espera-se: INVALID S "
 ./app -a insertion -n 9 -s none -P
-
+echo "Teste 7: Entrada: a = quick n = 9 s = random   Espera-se: a = quick n = 9 s = random"
+./app -a quick -n 9 -s random -P
