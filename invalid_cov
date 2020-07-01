@@ -1,0 +1,16 @@
+#!/bin/bash
+#!/usr/bin/bash
+
+echo "Teste 1: Entrada: a = selection n = 9 s = random   Espera-se: a = selection n = 9 s = random"
+./app -a selection -n 9 -s random -P
+echo "Teste 2: Entrada: a = insertion n = 9 s = ascending   Espera-se: a = insertion n = 9 s = ascending "
+./app -a insertion -n 9 -s ascending -P
+echo "Teste 3: Entrada: a = shell n = 9 s = descending   Espera-se: a = insertion n = 9 s = ascending "
+./app -a shell -n 9 -s descending -P
+echo "Teste 4: Entrada: a = qualquersort n = 9 s = ascending   Espera-se: INVALID A "
+./app -a qualquersort -n 9 -s ascending -P
+echo "Teste 5: Entrada: a = heap n = 0 s = almost   Espera-se: INVALID N "
+./app -a heap -n 0 -s almost -P
+echo "Teste 6: Entrada: a = insertion n = 9 s = none   Espera-se: INVALID S "
+./app -a insertion -n 9 -s none -P
+

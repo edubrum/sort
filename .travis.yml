@@ -1,0 +1,21 @@
+# Travis example for Modern C++ by Rafał Pocztarski
+# For more languages and info see:
+# https://github.com/rsp/travis-hello#readme
+
+sudo: false
+language: c
+compiler:
+  - gcc
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - gcc
+    - cppcheck
+    - valgrind
+install:
+- "[ $GCC = gcc ] && export GCC=gcc || true"
+script:
+  - make
+#  - make test

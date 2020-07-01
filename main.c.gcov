@@ -1,0 +1,106 @@
+        -:    0:Source:main.c
+        -:    0:Graph:main.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    0:Source is newer than graph
+        -:    1:#include <stdio.h>
+        -:    2:#include <stdlib.h>
+        -:    3:#include <string.h>
+        -:    4:#include "get_opt.h"
+        -:    5:#include "array.h"
+        -:    6:#include "sort.h"
+        -:    7:
+        -:    8:
+        -:    9:
+        -:   10:
+function main called 0 returned 0% blocks executed 0%
+    #####:   11:int main(int argc, char **argv) {
+    #####:   12:    int i, method, size, array_type, print_vector = 0;
+        -:   13:
+    #####:   14:    if(!check_opt(argc)){
+call    0 never executed
+branch  1 never executed
+branch  2 never executed
+    #####:   15:        fprintf(stderr,"Not enough parameters\n");
+call    0 never executed
+    #####:   16:        fprintf(stderr,"Expected: -a SORTTYPE -n ARRAYSIZE -s ARRAYSTATE [-P]\n");
+call    0 never executed
+    #####:   17:        fprintf(stderr,"Please read the doc.\n");
+call    0 never executed
+    #####:   18:        return 1;
+        -:   19:    }
+        -:   20:
+    #####:   21:    get_opt(argc, argv, &method, &size, &array_type, &print_vector);
+call    0 never executed
+        -:   22:
+        -:   23:    // Create the vector with the specified size and situation
+    #####:   24:    int *vet = generate_array(size, array_type);
+call    0 never executed
+        -:   25:
+    #####:   26:    if(!vet){
+branch  0 never executed
+branch  1 never executed
+    #####:   27:        fprintf(stderr,"Memory allocation failed.\n");
+call    0 never executed
+    #####:   28:        return 1;
+        -:   29:    }
+        -:   30:
+    #####:   31:    int *vet_aux = (int*)malloc(sizeof(int)*size);
+        -:   32:    // Create a copy of the vector to print it berfore and after it is sorted in case this option is enabled
+    #####:   33:    for(i=0; i<size; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:   34:        vet_aux[i] = vet[i];
+        -:   35:    }
+        -:   36:    // Sort the array
+    #####:   37:    sort_array(vet, size, method);
+call    0 never executed
+        -:   38:
+    #####:   39:    printf("-- Analysis --\n\n");
+call    0 never executed
+    #####:   40:    printf("Sorting algorithm: %s\n", get_method_name(method));
+call    0 never executed
+call    1 never executed
+    #####:   41:    printf("Array type: %s\n", get_array_type_name(array_type));
+call    0 never executed
+call    1 never executed
+    #####:   42:    printf("Array size: %d\n", size);
+call    0 never executed
+        -:   43:    /*
+        -:   44:    if(method < GPUQUICK ){
+        -:   45:        printf("Number of comparisons: %d\n", get_comparisons());
+        -:   46:        printf("Number of swaps: %d\n", get_swaps());
+        -:   47:    }
+        -:   48:    */
+    #####:   49:    printf("Time elapsed: %f s\n", get_elapsed_time());
+call    0 never executed
+call    1 never executed
+    #####:   50:    if(print_vector){
+branch  0 never executed
+branch  1 never executed
+    #####:   51:        printf("Original: ");
+call    0 never executed
+    #####:   52:        for(i=0; i<size; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:   53:            printf("%d ", vet_aux[i]);
+call    0 never executed
+        -:   54:        }
+    #####:   55:        printf("\n\nSorted: ");
+call    0 never executed
+    #####:   56:        for(i=0; i<size; i++){
+branch  0 never executed
+branch  1 never executed
+    #####:   57:            printf("%d ", vet[i]);
+call    0 never executed
+        -:   58:        }
+        -:   59:    }
+        -:   60:
+        -:   61:	
+    #####:   62:    free(vet);
+    #####:   63:    free(vet_aux);
+    #####:   64:    printf("\n\n");
+call    0 never executed
+    #####:   65:    return 0;
+        -:   66:}

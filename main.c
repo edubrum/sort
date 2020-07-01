@@ -5,6 +5,9 @@
 #include "array.h"
 #include "sort.h"
 
+
+
+
 int main(int argc, char **argv) {
     int i, method, size, array_type, print_vector = 0;
 
@@ -54,6 +57,8 @@ int main(int argc, char **argv) {
             printf("%d ", vet[i]);
         }
     }
+
+	
     free(vet);
     free(vet_aux);
     printf("\n\n");

@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+
 static const char *optString = "a:n:s:P";
 
 int check_opt(int argc){
