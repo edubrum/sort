@@ -78,7 +78,7 @@ valgrind: app
 	@echo " "
 	$(GCC) $(GCCFLAGS) array.c sort.c get_opt.c main.c -o main.exe
 	@echo " "
-	#@bash invalid_valgrind
+	@bash invalid_valgrind
 	@echo " "
 	@echo "----------------------------------------------------------"
 	@echo " "

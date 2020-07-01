@@ -2,14 +2,14 @@
 #!/usr/bin/bash
 
 echo "Teste 1: Entrada: a = selection n = 9 s = random   Espera-se: a = selection n = 9 s = random"
-./main.exe -a selection -n 9 -s random -P
+valgrind --leak-check=full --show-leak-kinds=all ./main.exe -a selection -n 9 -s random -P
 echo "Teste 2: Entrada: a = insertion n = 9 s = ascending   Espera-se: a = insertion n = 9 s = ascending "
-./main.exe -a insertion -n 9 -s ascending -P
+valgrind --leak-check=full --show-leak-kinds=all ./main.exe -a insertion -n 9 -s ascending -P
 echo "Teste 3: Entrada: a = shell n = 9 s = descending   Espera-se: a = insertion n = 9 s = ascending "
-./main.exe -a shell -n 9 -s descending -P
+valgrind --leak-check=full --show-leak-kinds=all ./main.exe -a shell -n 9 -s descending -P
 echo "Teste 4: Entrada: a = qualquersort n = 9 s = ascending   Espera-se: INVALID A "
-./main.exe -a qualquersort -n 9 -s ascending -P
+valgrind --leak-check=full --show-leak-kinds=all ./main.exe -a qualquersort -n 9 -s ascending -P
 echo "Teste 5: Entrada: a = heap n = 0 s = almost   Espera-se: INVALID N "
-./main.exe -a heap -n 0 -s almost -P
+valgrind --leak-check=full --show-leak-kinds=all ./main.exe -a heap -n 0 -s almost -P
 echo "Teste 6: Entrada: a = insertion n = 9 s = none   Espera-se: INVALID S "
-./main.exe -a insertion -n 9 -s none -P
+valgrind --leak-check=full --show-leak-kinds=all ./main.exe -a insertion -n 9 -s none -P
